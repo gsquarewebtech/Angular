@@ -1,0 +1,559 @@
+#cover-spin {
+    position:fixed;
+    width:100%;
+    left:0;right:0;top:0;bottom:0;
+    background-color: rgba(0,0,0,0.7);
+    z-index:9999;
+ 
+}
+
+@-webkit-keyframes spin {
+	from {-webkit-transform:rotate(0deg);}
+	to {-webkit-transform:rotate(360deg);}
+}
+
+@keyframes spin {
+	from {transform:rotate(0deg);}
+	to {transform:rotate(360deg);}
+}
+
+#cover-spin::after {
+    content:'';
+    display:block;
+    position:absolute;
+    left:48%;top:40%;
+    width:40px;height:40px;
+    border-style:solid;
+    border-color:#ff7700;
+    border-top-color:transparent;
+    border-width: 4px;
+    border-radius:50%;
+    -webkit-animation: spin .8s linear infinite;
+    animation: spin .8s linear infinite;
+}
+.carForm{
+    width: 50%;
+    margin: 0 auto;
+}
+.carForm ul{
+    padding: 0;
+    height: 300px;
+    overflow: scroll;
+}
+.carForm ul li {
+    list-style-type: none;
+    border: 1px solid #eee;
+    padding: 10px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+.carForm .vinUl {
+    height: auto;
+    margin: 0;
+    overflow: auto;
+}
+input,select{
+    border-radius: 0 !important;
+    padding: 10px !important;
+    height: 46.5px !important;
+}
+
+.carForm .vinUl li{
+    margin-bottom: 0;
+}
+.progress-bar-div{
+    margin-top:50px;
+    width: 100%;
+    position: relative;
+}
+.croos-line-style {
+    width: 15px;
+    height: 22px;
+    position: absolute;
+    z-index: 20;
+    display: inline-block;
+    background: url(https://www.junkcarmedics.com/wp-content/themes/jcm-child/templates/img/cross.png) no-repeat !important;
+    left: 98%;
+    top: 26px;
+    right: 100%;
+}
+#bar {
+    height: 26px;
+    margin-bottom: 24px;
+    padding: 2px;
+    position: relative;
+    top: 24px;
+    z-index: 11;
+    background: -moz-linear-gradient(top, #dadada 0%, #ffffff 46%, #dadada 100%);
+
+}
+#bar .progress-bar{position: relative;}
+#bar.progress .progress-bar::after {
+    content: "";
+    width: 48px;
+    height: 22px;
+    position: absolute;
+    z-index: 1111;
+    display: inline-block;
+    background: url(../image/progress-car.png) no-repeat;
+    right: -20px;
+    top: 2px;
+}
+.mat-progress-bar .mat-progress-bar-fill {
+    background: #4052b5;
+}
+.mat-progress-bar .mat-progress-bar-fill::after {
+    background-color: unset !important;
+    left: auto !important;
+}
+.mat-progress-bar {
+    height: 26px !important;
+}
+.mat-tab-labels {
+    display: none !important;
+}
+
+ul li.active {
+    background:#ecf8fc;
+}
+.container_li {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 18px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #2e2e2e !important;
+}
+.container_li .checkmark::after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 9px;
+    top: 5px;
+    width: 8px;
+    height: 12px;
+    border: solid white;
+    border-top-width: medium;
+    border-right-width: medium;
+    border-bottom-width: medium;
+    border-left-width: medium;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.container_li .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 26px;
+    width: 26px;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: inset 0 0 0 1px #cccccc;
+}
+.container_li input{
+    z-index: -9999999;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.container_li input:checked ~ .checkmark {
+    background-color: #005a96;
+    box-shadow: inset 0 0 0 1px #005a96;
+}
+.container_li input:checked ~ .checkmark::after {
+    display: block;
+}
+.container_li .checkmark::after {
+    left: 9px;
+    top: 5px;
+    width: 8px;
+    height: 12px;
+    border: solid white;
+        border-top-width: medium;
+        border-right-width: medium;
+        border-bottom-width: medium;
+        border-left-width: medium;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.mat-tab-body-content {
+    overflow: hidden  !important;
+}
+.searchVIM  {
+    position: relative;
+}
+.searchVIM a {
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    color: red;
+    font-size: 25px;
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 100%;
+}
+.modal-header .car-center {
+    top: 155px;
+}
+.car-center {
+    width: 100%;
+    position: absolute;
+    top: 170px;
+    left: 0;
+}
+.car-center img {
+    margin: 0 auto;
+    display: block;
+}
+.main-one-all {
+    display: table-row;
+    width: 100%;
+    float: left;
+    z-index: 999999999999999;
+    position: relative;
+    bottom: 0;
+    top: 0;
+}
+.driver-left {
+    float: left;
+    border: 1px solid #ccc;
+        border-top-color: rgb(204, 204, 204);
+        border-top-style: solid;
+        border-top-width: 1px;
+        border-left-color: rgb(204, 204, 204);
+        border-left-style: solid;
+        border-left-width: 1px;
+    border-left: 0;
+    border-top: 0;
+    vertical-align: top;
+    display: table;
+    width: 50%;
+    height: 220px;
+    z-index: 9999999999999999999;
+    position: relative;
+}
+h5#exampleModalLongTitle {
+    color: #0077bd;
+    font-size: 26px;
+    font-weight: 600;
+    font-family: Montserrat;
+    float: left;
+    width: 100%;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+h5#exampleModalLongTitle span {
+    font-size: 18px;
+    color: #4c4c4c;
+    font-weight: 400;
+    display: block;
+}
+.modal-dialog {
+    max-width: 600px !important;
+}
+.modal-dialog.modal-dialog-centered .modal-header {
+    min-height: auto;
+    padding: 0;
+    border-bottom: 1px solid transparent;
+    margin-bottom: 10px;
+}
+.driver-left input[type="checkbox"] {
+    margin: 0 0 0 !important;
+    opacity: 0;
+    width: 100%;
+    height: 100% !important;
+    position: absolute;
+    z-index: 99;
+}
+.modal-content .driver-left h3 {
+    font-size: 10px !important;
+}
+.driver-left h3 {
+    font-size: 12px;
+    color: #4c4c4c;
+    background: #f5f5f5;
+    padding: 7px;
+    vertical-align: bottom;
+    position: relative;
+    bottom: 0;
+    margin: 0;
+    text-align: center;
+    font-family: Montserrat;
+}
+.hello h3 {
+    vertical-align: bottom !important;
+    position: absolute;
+    width: 100%;
+}
+
+button.btn.btn-secondary:hover {
+    border: 1px solid #ed1c24;
+    background: 0 0;
+    color: #ed1c24;
+}
+button.btn.btn-secondary {
+    opacity: 1;
+}
+button.btn.btn-secondary {
+    margin: 0 auto !important;
+    display: block;
+    background: #ed1c24;
+    color: #fff;
+    padding: 4px 12px;
+    font-size: 19px;
+    position: relative;
+    top: 20px;
+    border: 1px solid #ed1c24;
+}
+
+.driver-left.listSelectedred::after {
+    content: "\f00c";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 31%;
+    margin: 0 auto;
+    font-family: fontawesome;
+    text-align: center;
+    float: none;
+    height: auto;
+    color: #fff;
+    font-size: 31px;
+    background: red;
+    width: 33%;
+    padding: 9px 5px;
+    border-radius: 100%;
+    height: 88px;
+    line-height: 64px;
+}
+.driver-left.listSelectedred {
+    background: rgba(165,200,228,.6);
+    position: relative;
+}
+.search-inner-milage::after {
+    content: ",000";
+    position: absolute;
+    top: 15px;
+    left: 46px;
+    vertical-align: middle;
+    bottom: 0;
+    margin: auto;
+    color: rgba(60,57,57,.29);
+}
+
+.unableToVerify{
+    vertical-align: middle;
+}
+#unabletomileage .modal-dialog.modal-dialog-centered .modal-footer {
+    padding: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    text-align: right;
+    border-top: 1px solid #cdcdcd;
+    padding-top: 0 !important;
+    padding-bottom: 44px;
+}
+#unabletomileage button.btn.btn-secondary.close {
+    border-color: #ccc;
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    padding: 12px 12px;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 6px;
+    font-weight: 500;
+}
+button.btn.btn-secondary:hover {
+    border: 1px solid #ed1c24;
+        border-top-color: rgb(237, 28, 36);
+        border-right-color: rgb(237, 28, 36);
+        border-bottom-color: rgb(237, 28, 36);
+        border-left-color: rgb(237, 28, 36);
+    background: 0 0;
+    color: #ed1c24;
+}
+.offer-form .first-row {
+    background-image: linear-gradient(to bottom,#d4eaf6 0%,#429bd6 100%);
+    padding: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+.offer-form .top-left-section {
+    background: #fff;
+    padding-top: 30px;
+    text-align: center;
+    font-family: Montserrat,sans-serif !important;
+}
+.offer-form .top-left-section .top-circle h1 a {
+    text-decoration: none;
+    color: #3582b5 !important;
+    font-size: 70px;
+    margin-bottom: 0;
+    font-weight: 700 !important;
+    line-height: 100px;
+    font-family: Montserrat,sans-serif;
+}
+.offer-form .top-left-section .top-circle {
+    text-align: center;
+    background-image: url(https://www.junkcarmedics.com/wp-content/uploads/circle.png);
+    padding: 70px 0;
+    background-size: 100% 100% 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 20px;
+    margin-bottom: 11px;
+}
+.offer-form .top-left-section h5 {
+    font-weight: 700 !important;
+    font-size: 23px;
+    text-align: center;
+    line-height: 23px;
+    margin: 0;
+    color: #000 !important;
+}
+.offer-form .top-left-section .top-circle p {
+    font-size: 20px;
+    font-weight: 400 !important;
+    text-align: center;
+    line-height: 40px;
+    color: #000 !important;
+    margin: 0;
+    line-height: 30px !important;
+    font-family: Montserrat,sans-serif;
+}
+
+.offer-form .submit {
+
+    font-size: 15px;
+    text-transform: uppercase;
+ 
+    line-height: 32px;
+    font-family: Montserrat,sans-serif;
+    background: #ed1c24;
+    font-weight: 700 !important;
+    color: #fff !important;
+    cursor: pointer;
+}
+.offer-form .top-right-section {
+    margin-left: 40px;
+    margin-right: 20px;
+}
+.offer-form .top-right-section h4 {
+    font-size: 30px !important;
+    margin: 0 !important;
+        margin-left: 0px;
+    line-height: 37px !important;
+    color: #000 !important;
+    font-weight: 700 !important;
+    font-family: Montserrat,sans-serif;
+
+}
+.offer-form .top-right-section p {
+    font-size: 14px !important;
+    line-height: 30px !important;
+    color: #474559 !important;
+    font-weight: 400 !important;
+    margin-top: 1em;
+    font-family: Montserrat,sans-serif;
+    margin-left: 10px !important;
+}
+.offer-form .top-right-section p.checkbox-text {
+    clear: both;
+    font-size: 15px !important;
+    margin: 10px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+    line-height: 23px !important;
+    color: #fff !important;
+    font-weight: 400 !important;
+    margin-bottom: 1.2em;
+    font-family: Montserrat,sans-serif;
+
+}
+.offer-form .top-right-section p {
+    font-size: 14px !important;
+    line-height: 30px !important;
+    color: #474559 !important;
+    font-weight: 400 !important;
+    margin-top: 1em;
+    font-family: Montserrat,sans-serif;
+    margin-left: 0px !important;
+}
+.offer-form .top-right-section input {
+    font-weight: 500 !important;
+    color: #000 !important;
+    border: 1px solid #89a5bf;
+    border-radius: 4px;
+    width: 100%;
+    padding: .75em;
+    font-family: Montserrat,sans-serif;
+}
+.offer-form .top-right-section span {
+    width: 100% !important;
+    float: left;
+  
+}
+
+.offer-form .top-right-section span.check-text {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 30px;
+    color: #fff !important;
+    width: 90% !important;
+    font-family: Montserrat,sans-serif;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.offer-form .top-right-section input[type="checkbox"] {
+    display: inline-block;
+    background: #e9eef2;
+    clear: none;
+    cursor: pointer;
+    line-height: 0;
+    height: 1.5em;
+    outline: 0;
+    margin-left: -17px;
+    padding: 0;
+    -webkit-border-radius: .2em;
+    border-radius: .2em;
+    text-align: center;
+    vertical-align: middle;
+    width: 1.4em;
+    min-width: 1.4em;
+    transition: all .2s linear;
+}
+
+.offer-form .top-right-section input.submit {
+    width: 100%;
+    font-size: 15px;
+    text-transform: uppercase;
+
+    line-height: 20px;
+    font-family: Montserrat,sans-serif;
+    background: #ed1c24;
+    font-weight: 700 !important;
+    color: #fff !important;
+}

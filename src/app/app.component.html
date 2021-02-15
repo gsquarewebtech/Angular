@@ -1,0 +1,34 @@
+﻿
+   <header id="header" *ngIf="currentUser && !isHome"> 
+    <div class="row w-100">
+      <div class="col-12">
+        <nav class="navbar navbar-expand-md navbar-white">
+          <a class="navbar-brand" routerLink="/"><span>
+            <img src="{{logo}}" /> </span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="showHideMenu();"><i class="fa fa-bars" ></i></button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngClass]="showMenu ? 'show' : 'hide'" >
+              <ul class="navbar-nav" id="nav">
+                <li class="nav-item" *ngIf="checkPermission(rolesData,'showClients')"><a aria-current="page" class="nav-link " routerLinkActive="active" routerLink="/clients"  [class.active]="router.isActive('/clients') || router.isActive('/add-client')">Clients</a></li>
+                <li class="nav-item" *ngIf="checkPermission(rolesData,'showReports')"><a class="nav-link"  routerLink="/reports" routerLinkActive="active">Reports</a></li>
+                <li class="nav-item" *ngIf="checkPermission(rolesData,'showUser')"><a class="nav-link " routerLink="/users"  routerLinkActive="active">User Management</a></li>
+                <li class="nav-item" *ngIf="checkPermission(rolesData,'showRole')"><a class="nav-link" routerLink="/role-management" routerLinkActive="active">Role Management</a></li>
+				
+                <li class="nav-item"  routerLinkActive="active" *ngIf="checkPermission(rolesData,'showCMS')"><a class="nav-link" routerLink="/cms" [class.active]="router.isActive('/cms') || router.isActive('/add-cms')|| router.isActive('/edit-cms')"  >CMS</a></li>
+				
+				<li class="nav-item" *ngIf="checkPermission(rolesData,'showTemplates')"><a routerLinkActive="active" class="nav-link" routerLink="/email-templates">Email Templates</a></li>
+              </ul></div><span class="user-toggle-btn d-block d-lg-none" (click)="showHideNavMenu()"  ><i class="fa fa-ellipsis-v"></i></span><div id="buttons" [ngClass]="showNavMenu ? '' : 'd-none'" class="ml-md-auto links d-lg-block  user-links-holder">
+                <a class="nav-link" *ngIf="checkPermission(rolesData,'settings')" routerLink="/settings" href="javascript:void(0);"><i class="fa fa-cog"></i></a>
+                <a class="nav-link" *ngIf="checkPermission(rolesData,'siteSettings')" routerLink="/profile" href="javascript:void(0);"><i class="fa fa-user"></i></a>
+                <a class="nav-link" (click)="logout()"  href="javascript:void(0);"><i class="fa fa-sign-out"></i></a>
+              </div>
+            </nav>
+          </div>
+        </div>
+	</header>
+	<div id="cover-spin" *ngIf="loading"></div>
+    <router-outlet (activate)="onActivate($event)" ></router-outlet>
+
+
+<div id="footerId"  *ngIf="currentUser && !isHome" class="page-footer"><div class="container-fluid"><div class="row"><div class="pages-links col-md-6 d-flex align-items-center"><ul></ul></div><div class="copyrights col-md-6 text-right"><p><span class="copy-text">© All Rights Reserved.&nbsp;</span><img id="powered_by" class="by " src="{{powered_by}}"  width="150" height="30"></p></div></div></div></div>
+
